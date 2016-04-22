@@ -1,0 +1,113 @@
+div#header {
+	width: 100%;
+	position: fixed;
+	background-color: grey;
+	color: white;
+	height: 60px;
+	-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	z-index: 999999;
+	border: 0;
+}
+body, html { margin: 0; background-color: #669999;}
+
+div#profile {
+	display: inline-block;
+	font-weight: bold;
+	margin-top: 5px;
+	border-top: 5px solid #66b3ff;
+	-moz-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5);
+	z-index: 999999;
+	border: 0;
+}
+
+div#business-name {
+	position: fixed;
+	top: 0;
+	right: 50%;
+	font-size: 3em;
+	display: inline-block;
+	letter-spacing: -0.1em;
+	border: 1px solid black;
+	padding-right: 5px;
+}
+
+div#salary {
+	position: fixed;
+	top: 0;
+	right: 5px;
+	display: inline-block;
+	text-align: center !important;
+	border: 5px solid #66b3ff;
+	-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 1);
+	-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 1);
+	box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 1);
+	z-index: 999999;
+	border: 0;
+}
+
+div#sidebar {
+	position: fixed;
+	top: 6%;
+	background-color: lightgrey;
+	width: 180px;
+	height: 100%;
+	border-top: 5px solid #66b3ff;
+	-moz-box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 1);
+	-webkit-box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 1);
+	box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 1);
+	z-index: 999999;
+	border: 0;
+}
+
+ul#sidebar-list { list-style: none; margin: 1px; margin-left: 0; padding-left: 0; }
+li#sidebar-list-item { border-bottom: 1px solid grey; }
+
+div#expense {
+	width: 75%;
+	position: relative;
+	left: 20%;
+	margin-top: 5%;
+	display: inline-block;
+	margin-left: 0%;
+	padding-bottom: 5px;
+
+	background: linear-gradient(#e6e6e6, #999999);
+}
+
+div#expense-image {
+	display: inline-block;
+}
+
+div#expense-title {
+	position: absolute;
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: 25px;
+	margin-top: 1%;
+}
+
+div#expense-description {
+	position: absolute;
+	display: inline-block;
+	margin-left: 5%;
+	margin-top: 4%;
+}
+
+div#expense-amount {
+	position: absolute;
+	top: 82%;
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: 25px;
+}
+
+div#expense-user {
+	position: absolute;
+	display: inline-block;
+	margin-left: 15px;
+	top: 0%;
+}

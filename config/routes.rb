@@ -53,4 +53,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  scope module: 'public' do
+    root 'dashboard#welcome'    
+  end
 end
