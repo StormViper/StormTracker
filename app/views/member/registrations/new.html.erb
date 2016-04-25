@@ -62,6 +62,11 @@
   </div>
 
   <div class="user-confirm">
+    <%= f.label "Monthly salary", id: "user-label" %><br />
+    <%= f.text_field :salary, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>

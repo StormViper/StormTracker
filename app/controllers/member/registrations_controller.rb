@@ -18,7 +18,7 @@ private
 
 def user_params
 	params.require(:user).permit(:email, :password, :address_line_one, :address_line_two, :address_line_three, :address_line_four, :address_line_five,
-															 :first_name, :last_name, :picture)
+															 :first_name, :last_name, :picture, :salary)
 end
 
 end

@@ -1,0 +1,19 @@
+<% @array.each do |a| %>
+<div id="expense">
+	<div id="expense-image">
+		<img src="https://i.gyazo.com/3a83181b6b5123bb9cae14cbbca9cdd1.png">
+	</div>
+	<div id="expense-title">
+		<p><%= a[:title] %></p>
+	</div>
+	<div id="expense-description">
+	  <p><%= a[:description] %></p>
+	</div>
+	<div id="expense-amount">
+	   <p><%= a[:amount] %></p>
+	</div>
+	<div id="expense-user">
+	  <p><%= a[:user] %></p>
+	</div>
+</div>
+<% end %>

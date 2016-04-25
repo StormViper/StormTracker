@@ -57,11 +57,12 @@ Rails.application.routes.draw do
   #   end
 
   scope module: 'public' do
-    root 'dashboard#welcome'    
+    root 'dashboard#welcome'
   end
 
   scope module: 'member' do
-    get '/users/signup', to: 'users#signup'
+    get '/dashboard', to: 'dashboard#home'
+    get '/users/signup', to: 'registrations#new'
     post '/users/signup', to: 'registrations#create'
   end
 end
