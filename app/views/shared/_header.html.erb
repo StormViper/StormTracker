@@ -11,7 +11,7 @@
 <% end %>
 <div id="header">
 	<div id="profile">
-		<%= current_user.first_name if user_signed_in? %>
+		<%= current_user.first_name.capitalize + ' ' + current_user.last_name.capitalize if user_signed_in? && current_user.first_name && current_user.last_name %>
 	</div>
 	<div id="business-name">
 		Storm Tracker
