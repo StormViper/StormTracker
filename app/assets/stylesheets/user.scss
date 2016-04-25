@@ -1,0 +1,17 @@
+div#user-form {
+	position: absolute;
+	margin-left: 40%;
+	margin-top: 4%;
+}
+
+h2#user-header {
+	font-size: 2.8em;
+}
+
+label#user-label {
+	font-size: 1.6em;
+}
+
+input#user-textbox:focus {
+	border: 2px solid #33ccff;
+}
