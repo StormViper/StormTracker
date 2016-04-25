@@ -1,0 +1,69 @@
+<div id="user-form" align="center">
+<h2 id="user-header">Sign up</h2>
+
+<%= form_for(@user, as: @user, url: users_signup_path(@user)) do |f| %>
+
+  <div class="user-email">
+    <%= f.label :email, id: "user-label" %><br />
+    <%= f.email_field :email, autofocus: true, id: "user-textbox" %>
+  </div>
+
+  <div class="user-password">
+    <%= f.label :password, id: "user-label" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.label :password_confirmation, id: "user-label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.label "Street name and number", id: "user-label" %><br />
+    <%= f.text_field :address_line_one, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.label "Town/city", id: "user-label" %><br />
+    <%= f.text_field :address_line_two, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.label "State/borough", id: "user-label" %><br />
+    <%= f.text_field :address_line_three, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.label "Zip/Post code", id: "user-label" %><br />
+    <%= f.text_field :address_line_four, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.label "Country", id: "user-label" %><br />
+    <%= f.text_field :address_line_five, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.label "First name", id: "user-label" %><br />
+    <%= f.text_field :first_name, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.label "Last name", id: "user-label" %><br />
+    <%= f.text_field :last_name, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.label "Picture", id: "user-label" %><br />
+    <%= f.text_field :picture, autocomplete: "off", id: "user-textbox" %>
+  </div>
+
+  <div class="user-confirm">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+</div>
