@@ -67,5 +67,10 @@ Rails.application.routes.draw do
     get '/users/me', to: 'dashboard#get_user'
 
     post '/expense/create', to: 'expense#create'
+
+  end
+
+  scope module: 'company' do
+    get '/mycompany', to: 'dashboard#index'
   end
 end

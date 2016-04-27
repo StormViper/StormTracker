@@ -40,7 +40,7 @@
     <%= f.label :picture, id: "expense-label" %><br />
     <%= f.text_field :picture, id: "expense-textbox" %>
   </div>
-<% if current_user.company %>
+<% if current_user.company.count > 0 %>
   <div class="field">
     <%= f.label :company?, id: "expense-label" %><br />
     <%= f.check_box :company?, id: "expense-textbox" %>
