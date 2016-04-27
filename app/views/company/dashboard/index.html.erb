@@ -20,8 +20,16 @@
 	</div>
 
 	<div id="expense-status">
-	  <p><%= "Status: #{e.status}" %></p>
-	  <a href="#">Change status</a>
+  <% if e.status == "Confirmed" %>
+    <p>Status: <i style="color:yellow;"><%= "#{e.status}" %></i></p>
+  <% elsif e.status == "Refused" %>
+     <p>Status: <i style="color:red;"><%= "#{e.status}" %></i></p>
+  <% elsif e.status == "Reimbursed" || e.status == "Personal" %>
+    <p>Status: <i style="color:green;"><%= "#{e.status}" %></i></p>
+  <% else %>
+    <p>Status: <i style="color:blue;"><%= "#{e.status}" %></i></p>
+  <% end %>
+	  <%= link_to "Change status", expense_edit_path(e) %>
 	</div>
 </div>
 <% end %>

@@ -15,8 +15,20 @@
 	<div id="expense-user">
 	  <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
 	</div>
+  <div id="expense-status">
+  <% if e.status == "Confirmed" %>
+    <p>Status: <i style="color:yellow;"><%= "#{e.status}" %></i></p>
+  <% elsif e.status == "Refused" %>
+     <p>Status: <i style="color:red;"><%= "#{e.status}" %></i></p>
+  <% elsif e.status == "Reimbursed" || e.status == "Personal" %>
+    <p>Status: <i style="color:green;"><%= "#{e.status}" %></i></p>
+  <% else %>
+    <p>Status: <i style="color:blue;"><%= "#{e.status}" %></i></p>
+  <% end %>
+  </div>
 </div>
 <% end %>
+
 <a href="#" id="create-expense" onclick="showExpenseCreate()">+</a>
 <div id="expense-dropdown">
 <%= form_for(@expense, as: @expense, url: expense_create_path(@expense), html: { method: :post }) do |f| %>
