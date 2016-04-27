@@ -1,7 +1,7 @@
 class Member::ExpenseController < ApplicationController
 	def create
 		@expense = Expense.new(expense_params)
-		@comp = current_user.company if current_user.company
+		@comp = current_user.company.first if current_user.company
 		if @expense.save
 			if params[:expense][:company] == "1"
 				@expense.toggle! :company?
