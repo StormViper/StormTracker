@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <div id="sidebar">
 	<ul id="sidebar-list">
-		<li id="sidebar-list-item">Company if user.comp</li>
+		<li id="sidebar-list-item"><%= link_to "Company", mycompany_path if user_signed_in? && current_user.company_admin? %></li>
 		<li id="sidebar-list-item">Personal</li>
 		<li id="sidebar-list-item">Setting</li>
 		<li id="sidebar-list-item">Upgrade</li>
@@ -17,6 +17,6 @@
 		Storm Tracker
 	</div>
 	<div id="salary">
-		<%= "Remaining Salary: #{current_user.salary if current_user.salary}" if user_signed_in? %>
+		<%= "Remaining Salary: #{calculate_salary}" if user_signed_in? %>
 	</div>
 </div>

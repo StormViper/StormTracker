@@ -1,0 +1,27 @@
+<div id="expense-total">
+
+</div>
+<% @expenses.each do |e| %>
+<div id="expense">
+	<div id="expense-image">
+		<img src="https://i.gyazo.com/3a83181b6b5123bb9cae14cbbca9cdd1.png">
+	</div>
+	<div id="expense-title">
+		<p><%= e.name %></p>
+	</div>
+	<div id="expense-description">
+	  <p><%= e.description %></p>
+	</div>
+	<div id="expense-amount">
+	   <p><%= e.amount %></p>
+	</div>
+	<div id="expense-user">
+	  <p><%= "#{e.user.first.first_name.capitalize} #{e.user.first.last_name.capitalize} " %></p>
+	</div>
+
+	<div id="expense-status">
+	  <p><%= "Status: #{e.status}" %></p>
+	  <a href="#">Change status</a>
+	</div>
+</div>
+<% end %>
