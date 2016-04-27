@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+<div id="sidebar">
+	<ul id="sidebar-list">
+		<li id="sidebar-list-item">Company if user.comp</li>
+		<li id="sidebar-list-item">Personal</li>
+		<li id="sidebar-list-item">Setting</li>
+		<li id="sidebar-list-item">Upgrade</li>
+		<li id="sidebar-list-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+	</ul>
+</div>
+<% end %>
+<div id="header">
+	<div id="profile">
+		<%= current_user.first_name.capitalize + ' ' + current_user.last_name.capitalize if user_signed_in? && current_user.first_name && current_user.last_name %>
+	</div>
+	<div id="business-name">
+		Storm Tracker
+	</div>
+	<div id="salary">
+		<%= "Remaining Salary: #{current_user.salary if current_user.salary}" if user_signed_in? %>
+	</div>
+</div>

@@ -1,0 +1,82 @@
+div#expense {
+	width: 75%;
+	height: 170px;
+	position: relative;
+	left: 20%;
+	margin-top: 5%;
+	display: inline-block;
+	margin-left: 0%;
+	padding-bottom: 5px;
+
+	background: linear-gradient(#e6e6e6, #999999);
+}
+
+div#expense-image {
+	display: inline-block;
+}
+
+div#expense-title {
+	position: absolute;
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: 25px;
+	margin-top: 1%;
+}
+
+div#expense-description {
+	position: absolute;
+	display: inline-block;
+	margin-left: 5%;
+	margin-top: 4%;
+}
+
+div#expense-amount {
+	position: absolute;
+	top: 82%;
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: 25px;
+}
+
+div#expense-user {
+	position: absolute;
+	display: inline-block;
+	margin-left: 15px;
+	top: 0%;
+}
+
+a#create-expense {
+	position: absolute;
+	right: 1%;
+	top: 7%;
+	font-size: 1.8em;
+	margin: 0%;
+	text-align: center;
+	padding-right: 8px;
+	padding-left: 8px;
+	border: 1px solid white;
+	text-decoration: none;
+	color: white;
+}
+
+a#create-expense:hover {
+	color: #d9d9d9;
+}
+
+div#expense-dropdown {
+	position: absolute;
+	right: 1%;
+	top: 11%;
+	padding: 5px;
+	background-color: grey;
+	display: none;
+}
+
+label#expense-label {
+	color: white;
+	font-size: 1.6em;
+}
+
+input#expense-textbox:focus {
+	border: 2px solid #33ccff;
+}
