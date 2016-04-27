@@ -24,6 +24,23 @@ class Member::ExpenseController < ApplicationController
 		end
 	end
 
+	def edit
+		@expense = Expense.find(params[:format])
+	end
+
+	def update
+		@expense = Expense.find(params[:format])
+		@expense.status = params[:expense][:status]
+		@expense.save
+		if @expense.save
+			flash[:success] = "Saved successfully"
+			redirect_to mycompany_path
+		else
+			flash[:danger] = "something went wrong"
+			render 'edit'
+		end
+	end
+
 private
 def expense_params
 	params.require(:expense).permit(:name, :amount, :description, :company?, :picture, :status)

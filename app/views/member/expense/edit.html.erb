@@ -1,0 +1,11 @@
+<%= form_for(@expense, as: @expense, url: expense_update_path(@expense), html: { method: :post }) do |f| %>
+<div id="user-form">
+  <div class="field">
+    <%= f.label :status, id: "user-label" %><br />
+    <%= f.select :status, "<option>Confirmed</option><option>Refused</option><option>Reimbursed</option>".html_safe %>
+  </div>
+  <div class="actions">
+    <%= f.submit "update expense" %>
+  </div>
+<% end %>
+</div>
