@@ -1,12 +1,14 @@
 class Member::ExpenseController < ApplicationController
 	def create
 		@expense = Expense.new(expense_params)
+		@comp = current_user.company if current_user.company
 		if @expense.save
 			if params[:expense][:company] == "1"
 				@expense.toggle! :company?
 			end
 
 			if @expense.company? == true
+				@comp.expense << @expense
 				@expense.status = "Waiting to be confirmed"
 				@expense.save
 			else

@@ -9,7 +9,7 @@ def calculate_salary
   @expense = Expense.where(created_at: Time.now.beginning_of_month..Time.now.end_of_month)
   @expenses = []
   @expense.each do |e|
-    if e.user.first == current_user
+    if e.user.first == current_user && e.status == "Personal" || e.status == "personal"
       @expenses << e
    end
   end
