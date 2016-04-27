@@ -14,6 +14,7 @@
 	</div>
 	<div id="expense-user">
 	  <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+    <%= calculate_salary %>
 	</div>
 </div>
 <% end %>
@@ -43,7 +44,7 @@
 
   <div class="field">
     <%= f.label :company?, id: "expense-label" %><br />
-    <%= f.text_field :company?, id: "expense-textbox" %>
+    <%= f.check_box :company?, id: "expense-textbox" %>
   </div>
 
   <div class="actions">

@@ -17,6 +17,6 @@
 		Storm Tracker
 	</div>
 	<div id="salary">
-		<%= "Remaining Salary: #{current_user.salary if current_user.salary}" if user_signed_in? %>
+		<%= "Remaining Salary: #{calculate_salary}" if user_signed_in? %>
 	</div>
 </div>
