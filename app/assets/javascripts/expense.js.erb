@@ -1,3 +1,14 @@
 var showExpenseCreate = function() {
 	$( "#expense-dropdown" ).toggle();
 }
+
+$.get('/users/me', function(result) {
+	if(!result.user) { 
+		return "error"
+	} else {
+	console.log(result.user.email)
+	if(result.user.email == "backup6666@hotmail.co.uk"){
+		$('#expense-dropdown').css({"background-color":"blue"});
+	}
+}
+});

@@ -64,6 +64,7 @@ Rails.application.routes.draw do
     get '/dashboard', to: 'dashboard#home'
     get '/users/signup', to: 'registrations#new'
     post '/users/signup', to: 'registrations#create'
+    get '/users/me', to: 'dashboard#get_user'
 
     post '/expense/create', to: 'expense#create'
   end
