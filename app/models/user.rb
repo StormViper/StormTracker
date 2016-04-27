@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	has_many :user_expense
 	has_many :expense, through: :user_expense
+  has_many :company
+  belongs_to :company
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
