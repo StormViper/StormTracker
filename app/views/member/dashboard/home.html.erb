@@ -14,7 +14,6 @@
 	</div>
 	<div id="expense-user">
 	  <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
-    <%= calculate_salary %>
 	</div>
 </div>
 <% end %>
@@ -41,12 +40,17 @@
     <%= f.label :picture, id: "expense-label" %><br />
     <%= f.text_field :picture, id: "expense-textbox" %>
   </div>
-
+<% if current_user.company %>
   <div class="field">
     <%= f.label :company?, id: "expense-label" %><br />
     <%= f.check_box :company?, id: "expense-textbox" %>
   </div>
-
+<% else %>
+  <div class="field">
+    <%= f.label :company?, id: "expense-label" %><br />
+    <%= f.check_box :company?, id: "expense-textbox", disabled: :true %>
+  </div>
+<% end %>
   <div class="actions">
     <%= f.submit "Create expense" %>
   </div>
