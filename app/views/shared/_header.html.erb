@@ -14,7 +14,7 @@
 		<%= current_user.first_name.capitalize + ' ' + current_user.last_name.capitalize if user_signed_in? && current_user.first_name && current_user.last_name %>
 	</div>
 	<div id="business-name">
-		Storm Tracker
+		<%= link_to "Storm Tracker", root_path %></h1>
 	</div>
 	<div id="salary">
 		<%= "Remaining Salary: #{calculate_salary}" if user_signed_in? %>

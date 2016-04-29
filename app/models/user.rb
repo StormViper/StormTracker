@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :lockable, :confirmable
+  def comp
+    return self.company.first
+  end
 end
 class << self
   def serialize_from_session(key, salt)
