@@ -15,13 +15,7 @@ body, html { margin: 0; background-color: #669999;}
 div#profile {
 	display: inline-block;
 	font-weight: bold;
-	margin-top: 0.5%;
 	border-top: 0.5% solid #66b3ff;
-	-moz-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5);
-	z-index: 999999;
-	border: 0;
 }
 
 div#business-name h1 {
@@ -87,7 +81,7 @@ div.home-back-image {
 	margin-top: 4%;
 	width: 65%;
 	height: 60%;
-	background-image: url("https://i.gyazo.com/cf76073c919fb8670cd4e3f51aed1e20.png");
+	background-image: asset-url("public-back.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	-webkit-border-radius: 2px;

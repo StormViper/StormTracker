@@ -58,7 +58,7 @@
 
   <div class="user-confirm">
     <%= f.label "Picture", id: "user-label" %><br />
-    <%= f.text_field :picture, autocomplete: "off", id: "user-textbox" %>
+    <%= f.file_field :picture, multiple: false, id: "user-textbox" %>
   </div>
 
   <div class="user-confirm">
