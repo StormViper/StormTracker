@@ -25,7 +25,7 @@ class Member::ExpenseController < ApplicationController
 	end
 
 	def edit
-		@expense = Expense.find(params[:format])
+		@expense = Expense.find_by_id(params[:format])
 	end
 
 	def update
