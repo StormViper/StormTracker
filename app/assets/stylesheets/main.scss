@@ -3,7 +3,7 @@ div#header {
 	position: fixed;
 	background-color: grey;
 	color: white;
-	height: 60px;
+	height: 6%;
 	-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
 	-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
@@ -15,30 +15,39 @@ body, html { margin: 0; background-color: #669999;}
 div#profile {
 	display: inline-block;
 	font-weight: bold;
-	margin-top: 5px;
-	border-top: 5px solid #66b3ff;
-	-moz-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5);
-	-webkit-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5);
-	z-index: 999999;
-	border: 0;
+	border-top: 0.5% solid #66b3ff;
 }
 
-div#business-name {
-	position: fixed;
-	top: 0;
+div#business-name h1 {
+	position: absolute;
+	top: 0%;
 	right: 50%;
-	font-size: 3em;
+	padding: 0% !important;
+	margin:0% !important;
 	display: inline-block;
 	letter-spacing: -0.1em;
 	border: 1px solid black;
 	padding-right: 5px;
 }
 
+div#business-name a {
+	font-size: 2em;
+	position: absolute;
+	top: 0%;
+	right: 50% !important;
+	margin:0% !important;
+	display: inline-block;
+	letter-spacing: -0.1em;
+	border: 1px solid black !important;
+	padding-right: 5px;
+	color: white;
+	text-decoration: none;
+}
+
 div#salary {
 	position: fixed;
-	top: 0;
-	right: 5px;
+	top: 0%;
+	right: 0.1%;
 	display: inline-block;
 	text-align: center !important;
 	border: 5px solid #66b3ff;
@@ -53,7 +62,7 @@ div#sidebar {
 	position: fixed;
 	top: 6%;
 	background-color: lightgrey;
-	width: 180px;
+	width: 9%;
 	height: 100%;
 	border-top: 5px solid #66b3ff;
 	-moz-box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 1);
@@ -70,23 +79,24 @@ div.home-back-image {
 	position: absolute;
 	margin-left: 20%;
 	margin-top: 4%;
-	width: 1200px;
-	height: 600px;
-	background-image: url("https://i.gyazo.com/cf76073c919fb8670cd4e3f51aed1e20.png");
+	width: 65%;
+	height: 60%;
+	background-image: asset-url("public-back.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
-	padding: 8px;
+	padding: 0.4%;
 	-webkit-box-shadow: 1px 2px 1px #85adad;
 	-moz-box-shadow: 1px 2px 1px #85adad;
 	box-shadow: 1px 2px 1px #85adad;
+	padding-bottom: 0%;
 }
 
 a#login-button {
 	position: absolute;
 	margin-left: 45%;
-	margin-top: 25%;
+	margin-top: 35%;
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
@@ -151,7 +161,7 @@ div#product-info {
 	position: absolute;
 	margin-top: 40%;
 	margin-left: 22%;
-	width: 1200px;
+	width: 65%;
 }
 
 p#sub-header {

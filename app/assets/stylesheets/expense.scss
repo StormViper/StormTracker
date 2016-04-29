@@ -1,9 +1,9 @@
 div#expense {
 	width: 75%;
-	height: 170px;
+	height: 1.7%;
 	position: relative;
 	left: 20%;
-	margin-top: 5%;
+	margin-top: 6%;
 	display: inline-block;
 	margin-left: 0%;
 	padding-bottom: 5px;
@@ -13,20 +13,21 @@ div#expense {
 
 div#expense-image {
 	display: inline-block;
+	width: 2.27%;
+	height: 1.61%;
 }
 
 div#expense-title {
 	position: absolute;
 	display: inline-block;
-	margin-right: 5px;
-	margin-left: 25px;
+	margin-left: 20%;
 	margin-top: 1%;
 }
 
 div#expense-description {
 	position: absolute;
 	display: inline-block;
-	margin-left: 5%;
+	margin-left: 35%;
 	margin-top: 4%;
 }
 
@@ -34,14 +35,13 @@ div#expense-amount {
 	position: absolute;
 	top: 82%;
 	display: inline-block;
-	margin-right: 5px;
-	margin-left: 25px;
+	margin-left: 18%;
 }
 
 div#expense-user {
 	position: absolute;
 	display: inline-block;
-	margin-left: 15px;
+	margin-left: 17%;
 	top: 0%;
 }
 
@@ -59,8 +59,8 @@ a#create-expense {
 	font-size: 1.8em;
 	margin: 0%;
 	text-align: center;
-	padding-right: 8px;
-	padding-left: 8px;
+	padding-right: 0.6%;
+	padding-left: 0.6%;
 	border: 1px solid white;
 	text-decoration: none;
 	color: white;
@@ -68,16 +68,17 @@ a#create-expense {
 
 a#create-expense:hover {
 	color: #d9d9d9;
+	border: 1px solid #d9d9d9;
 }
 
 div#expense-dropdown {
 	position: absolute;
 	width: auto;
 	height: auto;
-	max-width: 500px;
+	max-width: 50%;
 	right: 1%;
-	top: 11%;
-	padding: 5px;
+	top: 17%;
+	padding: 0.5%;
 	background-color: grey;
 	display: none;
 }
@@ -89,9 +90,51 @@ label#expense-label {
 
 input#expense-textbox:focus {
 	border: 2px solid #33ccff;
-	max-width: 173px;
 }
 
 input#expense-textbox:focus {
 	border: 2px solid #33ccff;
+}
+
+div#company-actions {
+	position: absolute;
+	left: 45%;
+	right: 55%;
+	width: 100%;
+	top: 7%;
+}
+
+ul#company-action-menu {
+	list-style-type: none;
+	display: inline;
+}
+
+li#company-list-action {
+	display: inline;
+}
+
+span.tooltip-text {
+	display: none;
+	color: white;
+	background-color: grey;
+	border-radius: 5%;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    right: 100%;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }

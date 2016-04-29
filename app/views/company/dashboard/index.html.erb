@@ -1,5 +1,16 @@
-<div id="expense-total">
-
+<% if @company.lock == true %>
+	<div align="center" style="position: absolute; left: 30%; top: 10%;">
+		<h1>You have not paid this months subscription.<br>If you have paid this subscription please contact support.</h1>
+	</div>
+<% else %>
+<div id="company-actions">
+	<ul id="company-action-menu">
+	<li id="company-list-action">[</li>
+		<li id="company-list-action"><%= link_to "Company users", mycompany_users_path, id: "company-action" %></li>
+		<li id="company-list-action"> | </li>
+		<li id="company-list-action"><a href="#" id="company-action">Manage users</a></li>
+	<li id="company-list-action">]</li>
+	</ul>
 </div>
 <% @expenses.each do |e| %>
 <div id="expense">
@@ -32,4 +43,5 @@
 	  <%= link_to "Change status", expense_edit_path(e) %>
 	</div>
 </div>
+<% end %>
 <% end %>
