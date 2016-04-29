@@ -1,5 +1,11 @@
-<div id="expense-total">
-
+<div id="company-actions">
+	<ul id="company-action-menu">
+	<li id="company-list-action">[</li>
+		<li id="company-list-action"><%= link_to "Company users", mycompany_users_path %></li>
+		<li id="company-list-action"> | </li>
+		<li id="company-list-action"><a href="#">Manage users</a></li>
+	<li id="company-list-action">]</li>
+	</ul>
 </div>
 <% @expenses.each do |e| %>
 <div id="expense">

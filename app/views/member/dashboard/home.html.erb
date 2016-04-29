@@ -4,7 +4,7 @@
 		<img src="https://i.gyazo.com/3a83181b6b5123bb9cae14cbbca9cdd1.png">
 	</div>
 	<div id="expense-title">
-		<p><%= e.name %></p>
+		<p><%= e.name.capitalize %></p>
 	</div>
 	<div id="expense-description">
 	  <p><%= e.description %></p>
@@ -13,7 +13,7 @@
 	   <p><%= e.amount %></p>
 	</div>
 	<div id="expense-user">
-	  <p><%= "#{current_user.first_name} #{current_user.last_name}" %></p>
+	  <p><%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %></p>
 	</div>
   <div id="expense-status">
   <% if e.status == "Confirmed" %>
@@ -34,7 +34,7 @@
 <%= form_for(@expense, as: @expense, url: expense_create_path(@expense), html: { method: :post }) do |f| %>
 
   <div class="field">
-    <%= f.label :name, id: "expense-label" %><br />
+    <%= f.label "Expense name", id: "expense-label" %><br />
     <%= f.text_field :name, autofocus: true, id: "expense-textbox" %>
   </div>
 
@@ -54,13 +54,17 @@
   </div>
 <% if current_user.company.count > 0 %>
   <div class="field">
-    <%= f.label :company?, id: "expense-label" %><br />
-    <%= f.check_box :company?, id: "expense-textbox" %>
+    <div class="tooltip"><%= f.label :company?, id: "expense-label" %>
+      <span class="tooltiptext">Is this expense for  your company?</span>
+    </div>
+    <%= f.check_box :company?, id: "expense-checkbox" %>
   </div>
 <% else %>
   <div class="field">
-    <%= f.label :company?, id: "expense-label" %><br />
-    <%= f.check_box :company?, id: "expense-textbox", disabled: :true %>
+    <div class="tooltip"><%= f.label :company?, id: "expense-label" %>
+      <span class="tooltiptext">Is this expense for  your company?</span>
+    </div>
+    <%= f.check_box :company?, id: "expense-checkbox", disabled: :true %>
   </div>
 <% end %>
   <div class="actions">

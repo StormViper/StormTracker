@@ -3,7 +3,7 @@ div#expense {
 	height: 1.7%;
 	position: relative;
 	left: 20%;
-	margin-top: 5%;
+	margin-top: 6%;
 	display: inline-block;
 	margin-left: 0%;
 	padding-bottom: 5px;
@@ -94,4 +94,47 @@ input#expense-textbox:focus {
 
 input#expense-textbox:focus {
 	border: 2px solid #33ccff;
+}
+
+div#company-actions {
+	position: absolute;
+	left: 50%;
+	right: 50%;
+	width: 100%;
+	top: 7%;
+}
+
+ul#company-action-menu {
+	list-style-type: none;
+	display: inline;
+}
+
+li#company-list-action {
+	display: inline;
+}
+
+span.tooltip-text {
+	display: none;
+	color: white;
+	background-color: grey;
+	border-radius: 5%;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    right: 100%;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
