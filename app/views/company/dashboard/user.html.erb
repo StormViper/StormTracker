@@ -1,0 +1,9 @@
+<div id="company-container" align="center">
+<% @company_users.each do |u| %>
+	<div id="company-user">
+		<%= image_tag(u.picture, class: "company-user-image") %>
+		<p id="company-user-name"><%= u.first_name.capitalize %></p>
+		<p id="company-user-email"><%= u.email %></p>
+	</div>
+<% end %>
+</div>

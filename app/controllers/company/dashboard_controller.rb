@@ -9,6 +9,11 @@ class Company::DashboardController < ApplicationController
 		end
 	end
 
+	def user
+		redirect_to root_path if current_user.comp.user == nil
+		@company_users = current_user.comp.user if current_user.comp.user.count > 0
+	end	
+
 private
 def authenticate_company
 	if !user_signed_in? || current_user.comp == nil || current_user.company_admin? == false
