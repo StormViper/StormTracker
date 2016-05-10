@@ -3,6 +3,11 @@ class Company < ActiveRecord::Base
   has_many :user, through: :company_user
   has_many :company_expense
   has_many :expense, through: :company_expense
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/
+  validates :name, presence: true
+  validates :email, presence: true,
+                    uniqueness: { case_sensitive: false },
+                    format: { with: VALID_EMAIL_REGEX }
 
   def owner
   	User.find_by_id(self.owner_id)
