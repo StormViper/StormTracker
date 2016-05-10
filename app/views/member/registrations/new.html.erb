@@ -1,5 +1,10 @@
 <div id="user-form" align="center">
 <h2 id="user-header">Sign up</h2>
+<ul>
+<% @user.errors.full_messages.each do |e| %>
+  <li><%= e %></li>
+<% end %>
+</ul>
 
 <%= form_for(@user, as: @user, url: users_signup_path(@user)) do |f| %>
 

@@ -8,6 +8,8 @@ class Company < ActiveRecord::Base
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }
+  validates :owner_id, presence: true,
+                       uniqueness: true
 
 def owner
   User.find_by_id(self.owner_id)
