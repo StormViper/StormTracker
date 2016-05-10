@@ -62,6 +62,7 @@ Rails.application.routes.draw do
 
   scope module: 'admin' do
     get '/admin/dashboard', to: 'dashboard#admin'
+    get '/admin/dashboard/users', to: 'dashboard#users'
   end
   scope module: 'member' do
     get '/dashboard', to: 'dashboard#home'
