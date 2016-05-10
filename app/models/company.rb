@@ -9,16 +9,16 @@ class Company < ActiveRecord::Base
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }
 
-  def owner
-  	User.find_by_id(self.owner_id)
-  end
+def owner
+  User.find_by_id(self.owner_id)
+end
 
-  def total
-  	return if self.expense.count <= 0
-  	@total = 0
-  	self.expense.each do |e|
-  		@total += e.amount
-  	end
-  	return @total
+def total
+  return if self.expense.count <= 0
+  @total = 0
+  self.expense.each do |e|
+    @total += e.amount
   end
+  return @total
+end
 end
