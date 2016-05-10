@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
     return self.company.first
   end
 
+
   def default_values
     if self.company_admin? == nil && self.admin? == nil
       self.toggle! :company_admin?
