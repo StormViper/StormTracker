@@ -6,6 +6,5 @@ class Expense < ActiveRecord::Base
 	validates :name, presence: true
 	validates :amount, presence: true
 	validates :description, presence: true
-	validates :company?, default: false
 	validates :picture, default: false
 end
