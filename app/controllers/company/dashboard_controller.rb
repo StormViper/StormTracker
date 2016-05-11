@@ -2,11 +2,7 @@ class Company::DashboardController < ApplicationController
 	before_filter :authenticate_company
 	def index
 		@company = current_user.company.first
-		@expenses = @company.expense
-		@total = 0
-		@expenses.each do |e|
-			@total += e.amount
-		end
+		@total = @company.total
 	end
 
 	def user
