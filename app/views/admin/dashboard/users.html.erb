@@ -1,0 +1,5 @@
+<div style="position: absolute;margin-top:20%;margin-left:20%;">
+<% @users.each do |u| %>
+ <%= "ID #{u.id} | Name #{u.first_name} #{u.last_name}" %><br>
+<% end %>
+</div>

@@ -33,10 +33,6 @@ class User < ActiveRecord::Base
       self.toggle! :company_admin?
       self.toggle! :admin?
     end
-    if self.company_admin? == true && self.admin? == true
-      self.toggle! :company_admin?
-      self.toggle! :admin?
-    end
   end
 end
 class << self

@@ -4,6 +4,10 @@ before_action :authenticate_user!, :authenticate_admin!
 		
 	end
 
+	def users
+		@users = User.all
+	end
+
 private
 
 def authenticate_admin!
