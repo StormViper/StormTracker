@@ -23,4 +23,5 @@ def total
   end
   return @total
 end
+
 end
