@@ -22,5 +22,7 @@ module StormTracker
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.autoload_paths += %W(#{config.root}/app/services #{config.root}/app/services/users #{config.root}/app/services/expenses)
+    config.eager_load_paths += %W(#{config.root}/app/services #{config.root}/app/services/users #{config.root}/app/services/expenses)
   end
 end

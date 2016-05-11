@@ -1,0 +1,12 @@
+$(document).ready(function() {
+	$('#signup-user').attr('disabled', true);
+	$('#user-textbox').keyup(function() {
+		if($(this).val().length !=0) {
+			$('#signup-user').attr('disabled', false);
+			$('#alert-email').hide();
+		} else {
+			$('#signup-user').attr('disabled', true);
+			$('#alert-email').show();
+		}
+	})
+});
