@@ -60,6 +60,10 @@ Rails.application.routes.draw do
     root 'dashboard#welcome'
   end
 
+  scope module: 'admin' do
+    get '/admin/dashboard', to: 'dashboard#admin'
+    get '/admin/dashboard/users', to: 'dashboard#users'
+  end
   scope module: 'member' do
     get '/dashboard', to: 'dashboard#home'
     get '/users/signup', to: 'registrations#new'
@@ -69,8 +73,10 @@ Rails.application.routes.draw do
     post '/expense/create', to: 'expense#create'
     get '/expense/edit', to: 'expense#edit'
     post '/expense/update', to: 'expense#update'
-
   end
+   scope module: 'upgrade' do
+    get '/upgrade', to: 'dashboard#upgrade'
+   end
 
   scope module: 'company' do
     get '/mycompany', to: 'dashboard#index'

@@ -1,11 +1,17 @@
 <div id="user-form" align="center">
 <h2 id="user-header">Sign up</h2>
+<ul>
+<% @user.errors.full_messages.each do |e| %>
+  <li><%= e %></li>
+<% end %>
+</ul>
 
 <%= form_for(@user, as: @user, url: users_signup_path(@user)) do |f| %>
 
   <div class="user-email">
     <%= f.label :email, id: "user-label" %><br />
-    <%= f.email_field :email, autofocus: true, id: "user-textbox" %>
+    <%= f.email_field :email, autofocus: true, id: "user-textbox" %><br>
+    <span class="help-block" id="alert-email">Please insert your email address</span>
   </div>
 
   <div class="user-password">
@@ -13,7 +19,7 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off", id: "user-textbox" %>
+    <%= f.password_field :password, autocomplete: "off", id: "user-textbox", class: "password-box" %>
   </div>
 
   <div class="user-confirm">
@@ -67,7 +73,7 @@
   </div>
 
   <div class="user-confirm">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", id:"signup-user" %>
   </div>
 <% end %>
 

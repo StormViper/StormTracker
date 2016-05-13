@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429152927) do
+ActiveRecord::Schema.define(version: 20160511144354) do
 
   create_table "companies", force: :cascade do |t|
     t.string  "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160429152927) do
     t.integer "price",        default: 0
     t.string  "subscription", default: "free"
     t.integer "owner_id"
+    t.integer "users",        default: 0
+    t.integer "user_limit",   default: 50
   end
 
   create_table "company_expenses", force: :cascade do |t|
