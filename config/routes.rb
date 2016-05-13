@@ -73,8 +73,10 @@ Rails.application.routes.draw do
     post '/expense/create', to: 'expense#create'
     get '/expense/edit', to: 'expense#edit'
     post '/expense/update', to: 'expense#update'
-
   end
+   scope module: 'upgrade' do
+    get '/upgrade', to: 'dashboard#upgrade'
+   end
 
   scope module: 'company' do
     get '/mycompany', to: 'dashboard#index'
