@@ -1,6 +1,7 @@
 class Upgrade::DashboardController < ApplicationController
   before_action :authenticate_user!, :check_all_details
   def upgrade
+    redirect_to root_path if !current_user
   end
 
 private
