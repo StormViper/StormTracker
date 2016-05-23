@@ -11,6 +11,7 @@ gem 'fog', '~> 1.38'
 gem 'browser', '~> 2.0', '>= 2.0.3'
 gem 'activemerchant' #https://github.com/activemerchant/active_merchant
 gem 'url_safe_base64' #http://www.rubydoc.info/gems/url_safe_base64/0.2.2
+gem 'grape' #https://github.com/ruby-grape/grape
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
