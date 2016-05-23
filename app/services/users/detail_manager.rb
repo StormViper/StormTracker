@@ -1,6 +1,7 @@
 class DetailManager
 	attr_accessor :user
 	def initialize(user)
+		return if !user
 		@user = user
 	end
 
