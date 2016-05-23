@@ -1,0 +1,24 @@
+<script>
+var switchSett = function(itemOne, itemTwo, itemThree){
+	item = document.getElementById(itemOne);
+	closeFirst = document.getElementById(itemTwo);
+	closeLast = document.getElementById(itemThree);
+
+	console.log(item.style);
+	if(item.style.display=="" || item.style.display == "none"){
+		item.style.display = "block";
+		closeFirst.style.display = "none";
+		closeLast.style.display = "none";
+	}
+}
+</script>
+
+<ul class="account-settings">
+	<li class="account-settings-button"><a href="#" onclick="switchSett('accountBoard', 'companyBoard', 'otherBoard')">
+	Account</a></li>
+	<li class="account-settings-button"><a href="#" onclick="switchSett('companyBoard', 'otherBoard', 'accountBoard')">Company</a></li>
+	<li class="account-settings-button"><a href="#" onclick="switchSett('otherBoard', 'accountBoard', 'companyBoard')">Other</a></li><br>
+	<li class="account-settings-button"><a href="#" id="accountBoard">Account</a></li>
+	<li class="account-settings-button"><a href="#" id="companyBoard">Company</a></li>
+	<li class="account-settings-button"><a href="#" id="otherBoard">Other</a></li>
+</ul>
