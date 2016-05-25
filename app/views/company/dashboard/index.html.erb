@@ -6,7 +6,7 @@
 <div id="company-actions">
 	<ul id="company-action-menu">
 	<li id="company-list-action">[</li>
-		<li id="company-list-action"><%= link_to "Company users", mycompany_users_path, id: "company-action" %></li>
+		<li id="company-list-action"><%= link_to "Company users", mycompany_users_path(:company_id => @company.id), id: "company-action" %></li>
 		<li id="company-list-action"> | </li>
 		<li id="company-list-action"><a href="#" id="company-action">Manage users</a></li>
 	<li id="company-list-action">]</li>
