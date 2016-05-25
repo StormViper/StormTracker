@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   validates :address_line_five, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :salary, presence: true
 
   def comp
     return self.company.first
@@ -32,6 +33,10 @@ class User < ActiveRecord::Base
     if self.company_admin? == nil && self.admin? == nil
       self.toggle! :company_admin?
       self.toggle! :admin?
+      if self.company_admin? == true && self.admin? == true
+        self.toggle! :company_admin?
+        self.toggle! :admin?
+      end
     end
   end
 end
