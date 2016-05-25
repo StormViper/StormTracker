@@ -9,7 +9,7 @@ end
 
 private
 def authenticate_admin!
-  if current_user.admin? == false || current_user.admin? == nil
+  if !current_user.comp_admin? || current_user.comp_admin? == nil
     redirect_to root_path
     flash[:warning] = "You need to be an admin to access this page"
   end

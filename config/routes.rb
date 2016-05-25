@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Business::Create => '/api'
   devise_for :users,
               :controllers => { :registrations => "member/registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
