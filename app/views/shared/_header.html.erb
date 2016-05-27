@@ -2,11 +2,11 @@
   <div id="sidebar">
   <ul id="sidebar-list">
   <% if user_signed_in? && current_user.company_admin? %>
-<li id="sidebar-list-item"><%= link_to "Company", mycompany_path %><br>
+<li id="company-list-item"><p class="company-header">Company</p>
 <%= form_tag('/mycompany', :method=>:get) do %>
-  <%= select_tag "Company", options_from_collection_for_select(current_user.comp, "id", "name", params[:id]) %>
+  <%= select_tag "Company", options_from_collection_for_select(current_user.comp, "id", "name", params[:id]), class: "company-list-select" %>
   <br>
-  <%= submit_tag "Search" %>
+  <%= submit_tag "Search", class: "company-search" %>
 </li>
 <% end %>
 <% end %>
