@@ -25,7 +25,8 @@ class User < ActiveRecord::Base
   validates :salary, presence: true
 
   def comp
-    return self.company.first
+    @companies = self.company
+    return @companies.each { |c| c.name }
   end
 
 

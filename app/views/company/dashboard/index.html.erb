@@ -6,12 +6,20 @@
 <div id="company-actions">
 	<ul id="company-action-menu">
 	<li id="company-list-action">[</li>
-		<li id="company-list-action"><%= link_to "Company users", mycompany_users_path, id: "company-action" %></li>
+		<li id="company-list-action"><%= link_to "Company users", mycompany_users_path(:company_id => @company.id), id: "company-action" %></li>
 		<li id="company-list-action"> | </li>
 		<li id="company-list-action"><a href="#" id="company-action">Manage users</a></li>
 	<li id="company-list-action">]</li>
 	</ul>
 </div>
+<p class="branch-header">Branch</p>
+<select class="branch-select">
+	<option class="branch-option">branch</option>
+	<option class="branch-option">branch2</option>
+</select>
+<button class="branch-search">
+	Search
+</button>
 <% @company.expense.each do |e| %>
 <div id="expense">
 	<div id="expense-image">
