@@ -1,0 +1,48 @@
+
+<div id="expense-dropdown">
+<%= form_for(@expense, as: @expense, url: expense_create_path(@expense), html: { method: :post }) do |f| %>
+
+  <div class="field">
+    <%= f.label "Expense name", id: "expense-label" %><br />
+    <%= f.text_field :name, autofocus: true, id: "expense-textbox" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount, id: "expense-label" %><br />
+    <%= f.text_field :amount, id: "expense-textbox" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, id: "expense-label" %><br />
+    <%= f.text_area :description, id: "expense-textbox" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture, id: "expense-label" %><br />
+    <%= f.text_field :picture, id: "expense-textbox" %>
+  </div>
+<% if current_user.company.count > 0 %>
+  <div class="field">
+    <div class="tooltip"><%= f.label :company?, id: "expense-label" %>
+      <span class="tooltiptext">Is this expense for  your company?</span>
+    </div>
+    <%= f.check_box :company?, id: "expense-checkbox" %>
+  </div>
+<% else %>
+  <div class="field">
+    <div class="tooltip"><%= f.label :company?, id: "expense-label" %>
+      <span class="tooltiptext">Is this expense for  your company?</span>
+    </div>
+    <%= f.check_box :company?, id: "expense-checkbox", disabled: :true %>
+  </div>
+<% end %>
+<% if @branch.present? && @branch.count > 0 %>
+  <div class="branch-section">
+  <%= form_tag('/mycompany/expense/new', :method=>:post) do %>
+  <%= select_tag "Branch", options_from_collection_for_select(@branch, "id", "name", params[:branch_id]), class: "company-list-select" %>
+  <br><% end %>
+  <%= submit_tag "Create expense", class: "company-search" %>
+  <% end %>
+  </div>
+<% end %>
+</div>

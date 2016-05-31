@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 	has_many :expense, through: :user_expense
   has_many :company_user
   has_many :company, through: :company_user
+  has_many :user_branch
+  has_many :branches, through: :user_branch
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -25,9 +27,13 @@ class User < ActiveRecord::Base
   validates :salary, presence: true
 
   def comp
-    return self.company.first
+    @companies = self.company
+    return @companies.each { |c| c.name }
   end
 
+  def branch
+    return self.branches
+  end
 
   def default_values
     if self.company_admin? == nil && self.admin? == nil

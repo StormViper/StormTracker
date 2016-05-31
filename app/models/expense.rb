@@ -1,4 +1,6 @@
 class Expense < ActiveRecord::Base
+  has_many :branch_expense
+  has_many :branch, through: :branch_expense
 	has_many :user_expense
 	has_many :user, through: :user_expense
 	has_many :company_expenses

@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160511144354) do
+ActiveRecord::Schema.define(version: 20160527162057) do
+
+  create_table "branch_expenses", force: :cascade do |t|
+    t.integer  "branch_id"
+    t.integer  "expense_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "branches", force: :cascade do |t|
+    t.string  "name"
+    t.integer "parent_id"
+    t.integer "company_id"
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string  "name"
@@ -47,6 +60,13 @@ ActiveRecord::Schema.define(version: 20160511144354) do
     t.string   "picture"
     t.datetime "created_at"
     t.string   "status"
+  end
+
+  create_table "user_branches", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "branch_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_expenses", force: :cascade do |t|

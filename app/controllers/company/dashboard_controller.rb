@@ -1,13 +1,20 @@
 class Company::DashboardController < ApplicationController
   before_filter :authenticate_company, :authenticate_user!
   def index
-    @company = current_user.company.first
+    if params[:Company]
+      @company = Company.where("id LIKE ?", params[:Company]).first
+    end 
+    if !@company || @company == nil
+      flash[:danger] = "We could not set the company - please contact the administrator"
+      redirect_to root_path
+    end
     @total = @company.total
   end
 
   def user
-    redirect_to root_path if current_user.comp.user == nil
-    @company_users = current_user.comp.user if current_user.comp.user.count > 0
+    @company = Company.where("id LIKE ?", params[:company_id]).first
+    redirect_to root_path if @company.user == nil
+    @company_users = @company.user if @company.user.count > 0
   end
 
   def add_user_to_company
