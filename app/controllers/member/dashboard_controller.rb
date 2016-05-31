@@ -1,7 +1,8 @@
 class Member::DashboardController < ApplicationController
   def home
     @expense = Expense.new
-  @user_expense = current_user.expense
+    @user_expense = current_user.expense
+    @branch = current_user.branch if current_user.comp.present?
   end
 
   def upgrade
