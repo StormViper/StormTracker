@@ -1,4 +1,5 @@
 class Branch < ActiveRecord::Base
+	belongs_to :company
   validates :name, presence: true
   validates :parent_id, presence: true
 
