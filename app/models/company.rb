@@ -25,4 +25,8 @@ def total
   return @total
 end
 
+def branch
+  return self.branches
+end
+
 end

@@ -12,15 +12,8 @@
 	<li id="company-list-action">]</li>
 	</ul>
 </div>
-<% if @company.expense.count > 0 %>
-<p class="branch-header">Branch</p>
-<%= form_tag('/mycompany/branch', :method=>:get) do %>
-  <%= select_tag "Branch", options_from_collection_for_select(@company.branch, "id", "name", params[:id]), class: "branch-select" %>
-<%= submit_tag "Search", class: "branch-search" %>
-<% end %>
-<% end %>
 
-<% @company.expense.each do |e| %>
+<% @branch.expense.each do |e| %>
 <div id="expense">
 	<div id="expense-image">
 		<img src="https://i.gyazo.com/3a83181b6b5123bb9cae14cbbca9cdd1.png">
