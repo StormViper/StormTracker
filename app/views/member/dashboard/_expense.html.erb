@@ -36,15 +36,13 @@
     <%= f.check_box :company?, id: "expense-checkbox", disabled: :true %>
   </div>
 <% end %>
+<% if @branch.present? && @branch.count > 0 %>
   <div class="branch-section">
   <%= form_tag('/mycompany/expense/new', :method=>:post) do %>
   <%= select_tag "Branch", options_from_collection_for_select(@branch, "id", "name", params[:branch_id]), class: "company-list-select" %>
-  <br>
-  <%= submit_tag "Search", class: "company-search" %>
+  <br><% end %>
+  <%= submit_tag "Create expense", class: "company-search" %>
   <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Create expense" %>
   </div>
 <% end %>
 </div>
