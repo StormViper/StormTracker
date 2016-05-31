@@ -1,22 +1,31 @@
 <% if user_signed_in? %>
-<div id="sidebar">
-	<ul id="sidebar-list">
-		<li id="sidebar-list-item"><%= link_to "Company", mycompany_path if user_signed_in? && current_user.company_admin? %></li>
-		<li id="sidebar-list-item"><%= link_to "Personal", root_path %></li>
-		<li id="sidebar-list-item">Settings</li>
-		<li id="sidebar-list-item">Upgrade</li>
-		<li id="sidebar-list-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-	</ul>
+  <div id="sidebar">
+  <ul id="sidebar-list">
+  <% if user_signed_in? && current_user.company_admin? %>
+<li id="company-list-item"><p class="company-header">Company</p>
+<%= form_tag('/mycompany', :method=>:get) do %>
+  <%= select_tag "Company", options_from_collection_for_select(current_user.comp, "id", "name", params[:id]), class: "company-list-select" %>
+  <br>
+  <%= submit_tag "Search", class: "company-search" %>
+</li>
+<% end %>
+<% end %>
+
+  <li id="sidebar-list-item"><%= link_to "Personal", root_path %></li>
+  <li id="sidebar-list-item">Settings</li>
+  <li id="sidebar-list-item">Upgrade</li>
+  <li id="sidebar-list-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+</ul>
 </div>
 <% end %>
 <div id="header">
-	<div id="profile">
-		<%= image_tag(current_user.picture, class: "user-picture") if user_signed_in? && current_user.picture? %>
-	</div>
-	<div id="business-name">
-		<%= link_to "Storm Tracker", root_path %></h1>
-	</div>
-	<div id="salary">
-		<%= "Remaining Salary: #{calculate_salary}" if user_signed_in? %>
-	</div>
+  <div id="profile">
+    <%= image_tag(current_user.picture, class: "user-picture") if user_signed_in? && current_user.picture? %>
+  </div>
+  <div id="business-name">
+    <%= link_to "Storm Tracker", root_path %></h1>
+  </div>
+  <div id="salary">
+    <%= "Remaining Salary: #{calculate_salary}" if user_signed_in? %>
+  </div>
 </div>

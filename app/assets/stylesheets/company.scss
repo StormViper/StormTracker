@@ -35,3 +35,25 @@ p#company-user-email {
 a#company-action {
 	color: white;
 }
+
+p.branch-header {
+	position: absolute;
+	top: 8%;
+	left: 13%;
+	margin: 0px;
+	padding: 0px;
+	font: bold 1.4em/22px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: white;
+}
+
+select.branch-select {
+	position: absolute;
+	top: 10%;
+	left: 13%;
+}
+
+.branch-search{
+  position: absolute;
+  top: 12%;
+  left: 13.4%;
+}

@@ -1,3 +1,6 @@
+Versions
+Ruby-2.2.1p85
+Rails-4.2.5
 == README
 
 This README would normally document whatever steps are necessary to get the

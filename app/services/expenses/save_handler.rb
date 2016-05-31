@@ -12,9 +12,14 @@ class SaveHandler
 				end
 
 				if @expense.company? == true
-					user.comp.expense << @expense
-					@expense.status = "Waiting to be confirmed"
-					@expense.save
+					if @params[:Branch]
+						@branch = Branch.find_by_id(@params[:Branch])
+						@branch.expense << @expense
+					else
+					  user.comp.first.expense << @expense
+					  @expense.status = "Waiting to be confirmed"
+					  @expense.save
+					end
 				else
 					@expense.status = "Personal"
 					@expense.save

@@ -84,5 +84,8 @@ Rails.application.routes.draw do
   scope module: 'company' do
     get '/mycompany', to: 'dashboard#index'
     get '/mycompany/users', to: 'dashboard#user'
+
+    get '/mycompany/branch', to: 'branch#index'
+    post '/mycompany/expense/new', to: 'branch#new_expense'
   end
 end

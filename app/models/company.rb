@@ -1,4 +1,5 @@
 class Company < ActiveRecord::Base
+  has_many :branches
 	has_many :company_user
   has_many :user, through: :company_user
   has_many :company_expense
@@ -22,6 +23,10 @@ def total
     @total += e.amount
   end
   return @total
+end
+
+def branch
+  return self.branches
 end
 
 end
