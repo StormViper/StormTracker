@@ -16,7 +16,10 @@ var switchSett = function(itemOne, itemTwo, itemThree){
   <li class="account-settings-button"><a href="#" onclick="switchSett('accountBoard', 'companyBoard', 'otherBoard')">Account</a></li>
   <li class="account-settings-button"><a href="#" onclick="switchSett('companyBoard', 'otherBoard', 'accountBoard')">Company</a></li>
   <li class="account-settings-button"><a href="#" onclick="switchSett('otherBoard', 'accountBoard', 'companyBoard')">Other</a></li><br>
+
+<div id="settingContainer">
   <%= render "account_settings" %>
   <%= render "company_settings" %>
   <%= render "other_settings" %>
+</div>
 </ul>
