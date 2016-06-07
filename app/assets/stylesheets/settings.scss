@@ -1,0 +1,27 @@
+div.settContainer {
+	width: 200px;
+	height: auto;
+	background: white;
+	border-radius: 10px;
+	box-shadow: inset 0 0 10px black, 0 0 10px black;
+	padding: 10px;
+	display: inline-block;
+	margin: 15px;
+	vertical-align: top;
+}
+
+div#companyBoard, div#otherBoard, div#accountBoard {
+	box-shadow: inset 1px 1px 10px black, 0 0 30px black;
+}
+
+div#settingContainer {
+	position: relative;
+	margin-top: 5%;
+	left: 20%;
+}
+
+p.setting-sub-header {
+	color: #1a1a1a;
+  font: bold 1.4em/22px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  text-shadow: 3px 4px 5px rgba(150, 150, 150, 1);
+}
