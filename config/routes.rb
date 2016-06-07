@@ -70,6 +70,7 @@ Rails.application.routes.draw do
     post '/users/signup', to: 'registrations#create'
     get '/users/me', to: 'dashboard#get_user'
 
+    get '/expense/new/company', to: 'expense#index'
     post '/expense/create', to: 'expense#create'
     get '/expense/edit', to: 'expense#edit'
     post '/expense/update', to: 'expense#update'

@@ -12,7 +12,7 @@ class Company::BranchController < ApplicationController
   end
 
   def new_expense
-  	flash[:sucess] = "test"
+  	flash[:success] = "test"
   	redirect_to root_path
   end
 end
