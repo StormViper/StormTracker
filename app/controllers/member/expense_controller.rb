@@ -13,13 +13,23 @@ class Member::ExpenseController < ApplicationController
   end
 
   def update
-  @expense = Expense.find(params[:format])
-  @expense.status = params[:expense][:status]
-  @create = SaveHandler.new(@expense, current_user, params)
-  result = @create.save_hard
-  result == "error" ? flash[:danger] = "Something went wrong" : flash[:success] = "Updated successfully"
-  redirect_to mycompany_path
-end
+    @expense = Expense.find(params[:format])
+    @expense.status = params[:expense][:status]
+    @create = SaveHandler.new(@expense, current_user, params)
+    result = @create.save_hard
+    result == "error" ? flash[:danger] = "Something went wrong" : flash[:success] = "Updated successfully"
+    redirect_to mycompany_path
+  end
+
+  def index
+    redirect_to root_path if !current_user
+    @companies = current_user.comp
+    if @companies.count > 1 && @companies.present?
+      @companies = current_user.comp
+    else
+      @companies = current_user.comp.first
+    end
+  end
 
 private
   def expense_params
