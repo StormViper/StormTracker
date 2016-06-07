@@ -1,0 +1,7 @@
+<% if @companies.count > 1 %>
+  <% @companies.each do |c| %>
+    <%= c.name %><br>
+  <% end %>
+<% else %>
+  <%= @companies %>
+<% end %>
