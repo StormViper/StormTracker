@@ -1,0 +1,17 @@
+<div class="expense-create-container">
+<%= form_for(@expense, url: expense_create_path(@expense)) do |e| %>
+    <%= e.label "Expense name", class: "expense-label" %><br>
+    <%= e.text_field :name, class: "expense-field" %><br>
+
+    <%= e.label "Expense amount", class: "expense-label" %><br>
+    <%= e.text_field :amount, class: "expense-field" %><br>
+
+    <%= e.label "Expense description", class: "expense-label" %><br>
+    <%= e.text_area :description, class: "expense-area" %><br>
+
+    <%= e.label "Expense picture", class: "expense-label" %><br>
+    <%= e.text_field :picture, class: "expense-field" %><br>
+
+    <%= e.submit "Create expense", class: "expense-submit" %>
+  <% end %>
+</div>
