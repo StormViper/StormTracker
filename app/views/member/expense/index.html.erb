@@ -1,7 +1,7 @@
 <div class="company-select-container" align="center">
 <% @companies.each do |c| %>
   <div class="company-container">
-    <%= link_to c.name.capitalize, expense_new_path(c), id: "comp-name" %><br>
+    <%= link_to c.name.capitalize, expense_new_comp_path(c, :comp => c.id), id: "comp-name" %><br>
     <%= c.email.downcase %>
   </div>
 <% end %>
