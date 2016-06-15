@@ -1,4 +1,15 @@
 class Member::ExpenseController < ApplicationController
+  def new
+    @expense = Expense.new
+    if params[:format]
+      company_id = params[:format]
+      @company = Company.find_by_id(params[:format])
+      @expense.toggle! :company?
+    end
+
+    @company.expense << @expense
+    current_user.expense << @expense
+  end
   def create
     @expense = Expense.new(expense_params)
     @comp = current_user.company.first if current_user.company
