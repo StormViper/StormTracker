@@ -3,12 +3,16 @@ class Company::DashboardController < ApplicationController
   def index
     if params[:Company]
       @company = Company.where("id LIKE ?", params[:Company]).first
-    end 
+      @total = @company.total
+    end
+    if params[:format]
+      @company = Company.find_by_id(params[:format])
+      @total = @company.total
+    end
     if !@company || @company == nil
       flash[:danger] = "We could not set the company - please contact the administrator"
       redirect_to root_path
     end
-    @total = @company.total
   end
 
   def user

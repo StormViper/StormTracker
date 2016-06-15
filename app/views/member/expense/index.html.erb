@@ -1,7 +1,8 @@
-<% if @companies.count > 1 %>
-  <% @companies.each do |c| %>
-    <%= c.name %><br>
-  <% end %>
-<% else %>
-  <%= @companies %>
+<div class="company-select-container" align="center">
+<% @companies.each do |c| %>
+  <div class="company-container">
+    <%= link_to c.name.capitalize, expense_new_comp_path(c, :comp => c.id), id: "comp-name" %><br>
+    <%= c.email.downcase %>
+  </div>
 <% end %>
+</div>

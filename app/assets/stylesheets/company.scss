@@ -44,7 +44,6 @@ p.branch-header {
 	padding: 0px;
 	font: bold 1.4em/22px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	color: white;
-	
 }
 
 select.branch-select {
@@ -57,4 +56,28 @@ select.branch-select {
   position: absolute;
   top: 12%;
   left: 13.4%;
+}
+
+div.company-select-container{
+	position: relative;
+	margin-top: 10%;
+}
+
+div.company-container {
+	color: white;
+  display: inline-block;
+	margin-right: 20px;
+	font: 1.2em/19px "Courier New", Arial, Helvetica, Geneva, Monospace, serif;
+	border: 5px solid #E6E6DC;
+	background-color: #00628B;
+	padding: 10px;
+	-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	z-index: 999999;
+}
+
+#comp-name {
+	color: white;
+	margin-bottom: 5px;
 }

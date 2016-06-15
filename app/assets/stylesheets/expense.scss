@@ -132,7 +132,7 @@ span.tooltip-text {
     padding: 5px 0;
     border-radius: 6px;
     right: 100%;
- 
+
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
@@ -146,4 +146,43 @@ span.tooltip-text {
 	position: relative;
 	left: 50%;
 	margin-top: 15%;
+}
+
+.expense-create-container {
+	position: relative;
+	margin-top: 10%;
+	left: 45%;
+}
+
+.expense-label {
+	margin-left: 5%;
+	font: bold 1.6em/25px "Courier New", Arial, Helvetica, Geneva, Monospace, serif;
+}
+
+.expense-field {
+	width: 22%;
+}
+
+.expense-area {
+	width: 18%;
+	height: 100px;
+}
+
+.expense-area:focus, .expense-field:focus {
+  border: 2px solid #33ccff;
+}
+
+.expense-submit {
+	margin-left: 5%;
+	color: white;
+  display: inline-block;
+	margin-right: 20px;
+	font: 1.2em/19px "Courier New", Arial, Helvetica, Geneva, Monospace, serif;
+	border: 5px solid #E6E6DC;
+	background-color: #00628B;
+	padding: 10px;
+	-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	z-index: 999999;
 }
