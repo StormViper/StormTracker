@@ -1,5 +1,5 @@
 <div class="expense-create-container">
-<%= form_for(@expense, url: expense_create_path(@expense), method: :post) do |e| %>
+<%= form_for(@expense, url: expense_create_comp_path(@expense, :comp => params[:comp]), method: :post) do |e| %>
     <%= e.label "Expense name", class: "expense-label" %><br>
     <%= e.text_field :name, class: "expense-field" %><br>
 

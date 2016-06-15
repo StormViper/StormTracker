@@ -73,6 +73,9 @@ Rails.application.routes.draw do
     get '/expense/new/company', to: 'expense#index'
     get '/expense/new', to: 'expense#new'
     post '/expense/create', to: 'expense#create'
+  
+    get '/expense/new/comp', to: 'expense#new_comp'
+    post '/expense/create/comp', to: 'expense#create_with_comp'
     get '/expense/edit', to: 'expense#edit'
     post '/expense/update', to: 'expense#update'
 
