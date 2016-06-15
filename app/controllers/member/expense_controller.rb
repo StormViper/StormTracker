@@ -4,8 +4,8 @@ class Member::ExpenseController < ApplicationController
   end
 
   def new_comp
-    debugger
     @expense = Expense.new
+    @comp = Company.find_by_id(params[:format].to_i)
   end
 
   def create

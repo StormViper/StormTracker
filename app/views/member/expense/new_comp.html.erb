@@ -12,6 +12,10 @@
     <%= e.label "Expense picture", class: "expense-label" %><br>
     <%= e.text_field :picture, class: "expense-field" %><br>
 
+<% if @comp.branch.count > 0 %>
+    <%=  e.label "Company branch", class: "expense-label" %><br>
+    <%= select_tag "Branch", options_from_collection_for_select(@comp.branch, "id", "name", params[:id]), class: "branch-list-select" %><br>
+<% end %>
     <%= e.submit "Create expense", class: "expense-submit" %>
   <% end %>
 </div>
