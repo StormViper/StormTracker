@@ -40,14 +40,18 @@ class Member::ExpenseController < ApplicationController
     redirect_to mycompany_path
   end
 
+ def redirect_select
+   if current_user.comp.count == 0 || current_user.comp.count == nil
+     redirect_to expense_new_path
+   elsif current_user.comp.count > 0
+     redirect_to expense_new_company_path
+   else
+     flash[:danger] = "ERROR: Please contact an admin"
+   end
+ end
+
   def index
-    redirect_to root_path if !current_user
     @companies = current_user.comp
-    if @companies.count > 1 && @companies.present?
-      @companies = current_user.comp
-    else
-      @companies = current_user.comp.first if current_user.comp.present?
-    end
   end
 
 private

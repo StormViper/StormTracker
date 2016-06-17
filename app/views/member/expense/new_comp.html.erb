@@ -10,7 +10,7 @@
     <%= e.text_area :description, class: "expense-area" %><br>
 
     <%= e.label "Expense picture", class: "expense-label" %><br>
-    <%= e.text_field :picture, class: "expense-field" %><br>
+    <%= e.text_field :picture, class: "expense-field", id: "picture-field" %><br>
 
 <% if @comp.branch.count > 0 %>
     <%=  e.label "Company branch", class: "expense-label" %><br>

@@ -1,4 +1,8 @@
 <div class="company-select-container" align="center">
+  <div class="company-container-personal">
+    <%= link_to "Create personal expense", expense_new_path, id: "comp-name" %>
+
+  </div>
 <% @companies.each do |c| %>
   <div class="company-container">
     <%= link_to c.name.capitalize, expense_new_comp_path(c, :comp => c.id), id: "comp-name" %><br>
