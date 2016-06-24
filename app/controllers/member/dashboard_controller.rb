@@ -3,6 +3,12 @@ class Member::DashboardController < ApplicationController
     @expense = Expense.new
     @user_expense = current_user.expense
     @branch = current_user.branch if current_user.comp.present?
+    if current_user && user_signed_in?
+      ip = request.remote_ip
+      user = User.find_by_id(current_user.id)
+      user.last_ip_address = ip
+      user.save!
+    end
   end
 
   def upgrade

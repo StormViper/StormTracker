@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527162057) do
+ActiveRecord::Schema.define(version: 20160621125802) do
 
   create_table "branch_expenses", force: :cascade do |t|
     t.integer  "branch_id"
@@ -109,6 +109,8 @@ ActiveRecord::Schema.define(version: 20160527162057) do
     t.float    "salary"
     t.string   "subscription",           default: "free"
     t.date     "start_date",             default: '2016-04-29'
+    t.string   "ip_address"
+    t.string   "last_ip_address"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
