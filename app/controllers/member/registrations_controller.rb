@@ -6,11 +6,14 @@ class Member::RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
   if @user.save
+    ip = request.remote_ip
+    @user.ip_address = ip
+    @user.save!
     flash[:success] = "Successfully created account"
     redirect_to root_path
   else
-  flash[:danger] = "Failed to create account"
-  render 'new'
+    flash[:danger] = "Failed to create account"
+    render 'new'
   end
 end
 

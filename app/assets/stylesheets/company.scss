@@ -77,6 +77,20 @@ div.company-container {
 	z-index: 999999;
 }
 
+div.company-container-personal {
+	color: white;
+  display: inline-block;
+	margin-right: 20px;
+	font: 1.2em/19px "Courier New", Arial, Helvetica, Geneva, Monospace, serif;
+	border: 5px solid #E6E6DC;
+	background-color: #00628B;
+	padding: 10px;
+	-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.5);
+	z-index: 999999;
+}
+
 #comp-name {
 	color: white;
 	margin-bottom: 5px;
@@ -85,5 +99,9 @@ div.company-container {
 .branch-list-select {
 	position: relative;
 	left: 8%;
+	margin-bottom: 10px;
+}
+
+#picture-field {
 	margin-bottom: 10px;
 }
