@@ -13,7 +13,7 @@ class Member::ExpenseController < ApplicationController
     comp = current_user.company.first if current_user.company
     @create = SaveHandler.new(@expense, current_user, params, comp)
     result = @create.save_hard
-    result == "error" ? flash[:danger] = "Something went wrong" : flash[:success] = "Created successfully"
+    result == "success" ? flash[:success] = "Created expense successfully" : flash[:danger] = "Something went wrong - please try again. If this problem persists please contact an admin."
     redirect_to root_path
   end
 
@@ -23,7 +23,7 @@ class Member::ExpenseController < ApplicationController
     comp = Company.find_by_id(params[:comp].to_i)
     @create = SaveHandler.new(@expense, current_user, params, comp)
     result = @create.save_hard
-    result == "error" ? flash[:danger] = "Something went wrong" : flash[:success] = "Created successfully"
+    result == "success" ? flash[:success] = "Created expense successfully" : flash[:danger] = "Something went wrong - please try again. If this problem persists please contact an admin."
     redirect_to root_path
   end
 
