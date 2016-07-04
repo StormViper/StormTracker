@@ -12,7 +12,7 @@
 	<li id="company-list-action">]</li>
 	</ul>
 </div>
-<% if @company.expense.count > 0 %>
+<% if @company.branch.count > 0 %>
 <p class="branch-header">Branch</p>
 <%= form_tag('/mycompany/branch', :method=>:get) do %>
   <%= select_tag "Branch", options_from_collection_for_select(@company.branch, "id", "name", params[:id]), class: "branch-select" %>
