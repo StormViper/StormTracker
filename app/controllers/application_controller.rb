@@ -20,7 +20,7 @@ end
   return if !@salary
 
   @expenses.each do |e|
-  if e.status == "Personal" || "personal"
+  if e.status == "Personal" || "personal" || "Refused" || "refused"
     @salary -= e.amount
   end
 end
