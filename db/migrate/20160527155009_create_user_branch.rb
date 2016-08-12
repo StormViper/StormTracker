@@ -7,4 +7,3 @@ class CreateUserBranch < ActiveRecord::Migration
     end
   end
 end
-SuS

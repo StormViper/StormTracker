@@ -1,58 +1,55 @@
 div#expense {
-	width: 75%;
-	height: 1.7%;
 	position: relative;
-	left: 20%;
+  border: 1px solid black;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(#e6e6e6, #999999);
+  height: 160px;
 	top: 70px;
-	display: inline-block;
-	margin-left: 0%;
-	margin-top: 1%;
-	padding-bottom: 5px;
-
-	background: linear-gradient(#e6e6e6, #999999);
 }
 
-div#expense-image {
-	position: relative;
-	display: inline-block;
-	width: 2.27%;
-	height: 1.61%;
+div.expense-image {
+  display: inline-block;
 }
 
 div#expense-title {
-	font-size: 1.3em;
+	display: inline-block;
+  position: relative;
+  bottom: 165px;
+	left: 25%;
+  font: bold 1.3em/20.8px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-weight: bold;
 	text-decoration: underline;
-	position: relative;
-	display: inline-block;
-	left: 15%;
-	bottom: 100px;
 }
 
 div#expense-description {
 	position: relative;
-	display: inline-block;
-	left: 20%;
-	bottom: 50px;
-	width: 75%;
+  display: inline-block;
+  bottom: 110px;
+	left: 10%;
+  font: 1em/16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
 div#expense-amount {
 	position: relative;
 	display: inline-block;
+  bottom: 50px;
 }
 
 div#expense-user {
-	position: relative;
-	display: inline-block;
-	bottom: 140px;
-  left: 5%;
+	font: bold 1.3em/20.8px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  display: inline-block;
+  position: relative;
+  bottom: 165px;
+  left: 20%;
 }
 
 div#expense-status {
 	position: relative;
-	display: inline-block;
-	left: 60%;
+  display: inline-block;
+  bottom: 50px;
+	left: 10%;
 }
 
 a#create-expense {
