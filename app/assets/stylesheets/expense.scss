@@ -1,14 +1,12 @@
 div#expense {
 	width: 75%;
-	height: 1.7%;
+  height: 170px;
 	position: relative;
 	left: 20%;
 	top: 70px;
 	display: inline-block;
-	margin-left: 0%;
-	margin-top: 1%;
+	margin-top: 0%;
 	padding-bottom: 5px;
-
 	background: linear-gradient(#e6e6e6, #999999);
 }
 
@@ -20,7 +18,7 @@ div#expense-image {
 }
 
 div#expense-title {
-	font-size: 1.3em;
+	font: bold 1.3em/20.8px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-weight: bold;
 	text-decoration: underline;
 	position: relative;
@@ -45,14 +43,15 @@ div#expense-amount {
 div#expense-user {
 	position: relative;
 	display: inline-block;
-	bottom: 140px;
-  left: 5%;
+	bottom: 180px;
+  left: 17.5%;
 }
 
 div#expense-status {
 	position: relative;
 	display: inline-block;
 	left: 60%;
+	bottom: 60px;
 }
 
 a#create-expense {
