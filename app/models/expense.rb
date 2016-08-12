@@ -8,6 +8,6 @@ class Expense < ActiveRecord::Base
 	validates :name, presence: true
 	validates :amount, presence: true
 	validates :description, presence: true, length: { maximum: 46,
-                                                    too_long: "%{count} characters is the maximum allowed" } 
+                                                    too_long: "%{count} characters is the maximum allowed" }
 	validates :picture, default: false
 end

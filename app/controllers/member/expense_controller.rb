@@ -34,7 +34,8 @@ class Member::ExpenseController < ApplicationController
   def update
     @expense = Expense.find(params[:format])
     @expense.status = params[:expense][:status]
-    create = SaveHandler.new(@expense, current_user, params)
+    comp = current_user.comp.first
+    create = SaveHandler.new(@expense, current_user, params, comp)
     result = create.save_hard
     result == "error" ? flash[:danger] = "Something went wrong" : flash[:success] = "Updated successfully"
     redirect_to mycompany_path
