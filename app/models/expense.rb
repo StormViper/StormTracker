@@ -7,6 +7,7 @@ class Expense < ActiveRecord::Base
 	has_many :company, through: :expense
 	validates :name, presence: true
 	validates :amount, presence: true
-	validates :description, presence: true
+	validates :description, presence: true, length: { maximum: 46,
+                                                    too_long: "%{count} characters is the maximum allowed" }
 	validates :picture, default: false
 end
