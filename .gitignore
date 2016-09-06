@@ -33,6 +33,7 @@ rerun.txt
 pickle-email-*.html
 .byebug_history
 
+
 /public/uploads/*
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo

@@ -35,10 +35,13 @@ class Member::ExpenseController < ApplicationController
     @expense = Expense.find(params[:format])
     @expense.status = params[:expense][:status]
     comp = current_user.comp.first
-    create = SaveHandler.new(@expense, current_user, params, comp)
-    result = create.save_hard
-    result == "error" ? flash[:danger] = "Something went wrong" : flash[:success] = "Updated successfully"
-    redirect_to mycompany_path
+    if @expense.update_attributes(expense_params)
+      flash[:success] = "Updated expense successfully"
+      redirect_to root_path
+    else
+      flash[:danger] = "Failed to update expense"
+      redirect_to root_path
+    end
   end
 
  def redirect_select
