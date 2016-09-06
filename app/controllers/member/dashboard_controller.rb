@@ -1,7 +1,7 @@
 class Member::DashboardController < ApplicationController
   def home
     @expense = Expense.new
-    @user_expense = current_user.expense
+    @user_expense = current_user.expenses
     @branch = current_user.branch if current_user.comp.present?
     if current_user && user_signed_in?
       ip = request.remote_ip

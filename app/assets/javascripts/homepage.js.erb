@@ -1,7 +1,14 @@
 $(document).on('page:change', function() {
   $('.profile-img').click(function() {
     $('.profile-drop').fadeToggle("slow", "linear");
+    $('#ddd').focus();
   });
+  var divWidth = $('#exp-desc').width();
+
+  $(window).resize(function(){
+      $('#exp-desc-header').width( divWidth );
+  }).resize();
+});
 
 $(function(){
   $('.header').data('size','big');
@@ -15,7 +22,7 @@ $(window).scroll(function(){
         $('#salary').stop().animate({
           marginTop: '0'
         });
-        $('.profile-img').stop().animate({
+        $('#profile-img').stop().animate({
           height: '25px',
           width:  '35px'
         });
@@ -35,7 +42,7 @@ else
         $('#salary').stop().animate({
           marginTop: '1%'
         });
-        $('.profile-img').stop().animate({
+        $('#profile-img').stop().animate({
           height: '50px',
           width:  '70px'
         });
@@ -48,5 +55,4 @@ else
         },600);
       }
   }
-});
 });
