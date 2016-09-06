@@ -22,6 +22,10 @@
           Status: <i style="color:blue;"><%= "#{e.status}" %></i>
         <% end %>
       </div>
+<% end %>
+      <% if @user_expense.count <= 0 || nil %>
+      <h2 id="expense-title-header" style="font-size: 1.4em;">You have no expenses!</h2>
+
+      <% end %>
     </div>
   </div>
-<% end %>
