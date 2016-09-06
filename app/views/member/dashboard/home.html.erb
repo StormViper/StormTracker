@@ -1,30 +1,27 @@
+<h2 id="expense-title-header">This months expenses</h2>
+  <div class="expense-container">
+    <div id="expense-header">
+      <div id="exp-id-header">ID</div>
+      <div id="exp-name-header">Title</div>
+      <div id="exp-desc-header">Description</div>
+      <div id="exp-status-header">Status</div>
+    </div>
 <% @user_expense.each do |e| %>
-<div id="expense">
-  <div id="expense-image">
-    <img src="https://i.gyazo.com/3a83181b6b5123bb9cae14cbbca9cdd1.png">
+    <div id="expense">
+      <div id="exp-id"><%= e.id %></div>
+      <div id="exp-name"><%= e.name %></div>
+      <div id="exp-desc"><%= e.description %></div>
+      <div id="exp-status">
+        <% if e.status == "Confirmed" %>
+          status: <i style="color:yellow;"><%= "#{e.status}" %></i>
+        <% elsif e.status == "Refused" %>
+          Status: <i style="color:red;"><%= "#{e.status}" %></i>
+        <% elsif e.status == "Reimbursed" || e.status == "Personal" %>
+          Status: <i style="color:green;"><%= "#{e.status}" %></i>
+        <% else %>
+          Status: <i style="color:blue;"><%= "#{e.status}" %></i>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div id="expense-title">
-    <p><%= e.name.capitalize %></p>
-  </div>
-  <div id="expense-description">
-    <p><%= e.description %></p>
-  </div>
-  <div id="expense-amount">
-     <p>£<%= e.amount %></p>
-  </div>
-  <div id="expense-user">
-    <p><%= "#{current_user.first_name.capitalize} #{current_user.last_name.capitalize}" %></p>
-  </div>
-  <div id="expense-status">
-  <% if e.status == "Confirmed" %>
-    <p>Status: <i style="color:yellow;"><%= "#{e.status}" %></i></p>
-  <% elsif e.status == "Refused" %>
-     <p>Status: <i style="color:red;"><%= "#{e.status}" %></i></p>
-  <% elsif e.status == "Reimbursed" || e.status == "Personal" %>
-    <p>Status: <i style="color:green;"><%= "#{e.status}" %></i></p>
-  <% else %>
-    <p>Status: <i style="color:blue;"><%= "#{e.status}" %></i></p>
-  <% end %>
-  </div>
-</div>
 <% end %>

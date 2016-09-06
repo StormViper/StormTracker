@@ -1,55 +1,108 @@
-div#expense {
-	position: relative;
-  border: 1px solid black;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  background: linear-gradient(#e6e6e6, #999999);
-  height: 160px;
-	top: 70px;
+.expense-container {
+  height: auto;
 }
 
-div.expense-image {
+#expense-header, #expense{
+  text-align: center;
+}
+
+#exp-id-header{
+  text-shadow: 2px 2px grey;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5em;
+  width: 20%;
   display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-div#expense-title {
-	display: inline-block;
-  position: relative;
-  bottom: 165px;
-	left: 25%;
-  font: bold 1.3em/20.8px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-div#expense-description {
-	position: relative;
+#exp-name-header{
+  text-shadow: 2px 2px grey;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5em;
+  width: 20%;
   display: inline-block;
-  bottom: 110px;
-	left: 10%;
-  font: 1em/16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-div#expense-amount {
-	position: relative;
-	display: inline-block;
-  bottom: 50px;
-}
-
-div#expense-user {
-	font: bold 1.3em/20.8px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+#exp-desc-header{
+  text-shadow: 2px 2px grey;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5em;
   display: inline-block;
-  position: relative;
-  bottom: 165px;
-  left: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-div#expense-status {
-	position: relative;
+#exp-status-header{
+  text-shadow: 2px 2px grey;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5em;
+  width: 20%;
   display: inline-block;
-  bottom: 50px;
-	left: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#exp-id{
+  text-shadow: 2px 2px grey;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5em;
+  width: 20%;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#exp-name{
+  text-shadow: 2px 2px grey;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5em;
+  width: 20%;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#exp-desc{
+  text-shadow: 2px 2px grey;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5em;
+  width: 26.3%;
+  max-width: 26.3%;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#exp-desc:hover,#exp-id:hover,#exp-name:hover,#exp-status:hover {
+  background-color: #b3b3b3;
+  -webkit-box-shadow: 1px 0px 30px 0px rgba(17, 223, 255, 0.75);
+  -moz-box-shadow:    1px 0px 30px 0px rgba(17, 223, 255, 0.75);
+  box-shadow:         1px 0px 30px 0px rgba(17, 223, 255, 0.75);
+}
+
+#exp-status{
+  text-shadow: 2px 2px grey;
+  font-weight: bolder;
+  color: white;
+  font-size: 1.5em;
+  width: 20%;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#expense-title-header{
+  color: #ffffff;
+  font-family: 'Raleway',sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 a#create-expense {

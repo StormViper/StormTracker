@@ -29,4 +29,15 @@ def branch
   return self.branches
 end
 
+def expenses
+  expenses = self.expense
+  final_expense = []
+  expenses.each do |e|
+    if e.created_at > Time.now.beginning_of_month && e.created_at < Time.now.end_of_month
+      final_expense << e
+    end
+  end
+  return final_expense
+end
+
 end
