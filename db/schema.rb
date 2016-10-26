@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 20160621125802) do
     t.string   "picture"
     t.float    "salary"
     t.string   "subscription",           default: "free"
-    t.date     "start_date",             default: '2016-07-04'
+    t.date     "start_date",             default: '2016-09-06'
     t.string   "ip_address"
     t.string   "last_ip_address"
   end

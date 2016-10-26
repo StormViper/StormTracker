@@ -1,6 +1,8 @@
-html{background-color: lightgrey;}
+@import 'https://fonts.googleapis.com/css?family=Baloo+Paaji|Prompt:400';
+body{margin: 0; padding: 0}
+html{background-color: #B1EBE1;}
 .main-header {
-  background-image: asset-url("background.jpg");
+  background-image: url("background.jpg");
   background-repeat: no-repeat;
   width: 100%;
   height: 600px;
@@ -16,15 +18,17 @@ html{background-color: lightgrey;}
 
 
 #header-title{
+  font-family: 'Baloo Paaji', cursive;
   color: white;
   font-size: 3em;
 }
 
 #subheader-title{
+  font-family: 'Baloo Paaji', cursive;
   position: absolute;
   color: white;
   font-size: 1.3em;
-  left: 2%;
+  left: 1.4%;
 }
 
 
@@ -63,7 +67,7 @@ border: 0;
   width: 60%;
   height: 400px;
   margin-bottom: 100px;
-  background-color: #bfbfbf;
+  background-color: #CAF4ED;
 }
 
 #left-media{
@@ -94,10 +98,10 @@ border: 0;
 }
 
 #content-paragraph{
+  font-family: 'Prompt', sans-serif;
   position: relative;
   top: 60px;
 }
-
 
 div#header {
 	width: 100%;
@@ -341,12 +345,12 @@ p#salary {
   display: none;
   margin: 0;
   list-style: none;
-  background-color: #8c8c8c;
-  width: 8%;
+  background-color: #E2FBF7;
+  width: 5%;
   border-radius: 20%;
   font-size: 1.5em;
   top: 50px;
-  height: 260px;
+  height: 240px;
 }
 
 #profilelist-item{
@@ -354,6 +358,6 @@ p#salary {
   text-align: left;
   margin: 0;
   left: 0;
-  color: white;
+  color: black;
   text-decoration: none;
 }
