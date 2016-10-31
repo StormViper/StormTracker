@@ -1,4 +1,5 @@
 class Member::ExpenseController < ApplicationController
+  before_action :check_access
   def new
     @expense = Expense.new
   end
@@ -6,6 +7,9 @@ class Member::ExpenseController < ApplicationController
   def new_comp
     @expense = Expense.new
     @comp = Company.find_by_id(params[:format].to_i)
+    return if !@comp
+
+    check_company_access(@comp)
   end
 
   def create
@@ -21,6 +25,9 @@ class Member::ExpenseController < ApplicationController
     @expense = Expense.new(expense_params)
     @expense.toggle! :company?
     comp = Company.find_by_id(params[:comp].to_i)
+    return if !comp
+
+    check_company_access(comp)
     @create = SaveHandler.new(@expense, current_user, params, comp)
     result = @create.save_hard
     result == "success" ? flash[:success] = "Created expense successfully" : flash[:danger] = "Something went wrong - please try again. If this problem persists please contact an admin."

@@ -1,6 +1,6 @@
 <div class="nav-container"></div>
   <div class="header">
-    <p id="salary"> Remaining Salary: 1397</p>
+    <p id="salary"> Remaining Salary: <%= calculate_salary %></p>
     <%= image_tag(current_user.picture, class: "profile-img") if user_signed_in? && current_user.picture? %>
     <ul class="profile-drop">
       <li><%= link_to "Personal", root_path, id: "profilelist-item" %></li>

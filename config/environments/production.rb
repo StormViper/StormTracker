@@ -76,4 +76,18 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+  #Setup SMTP for MAILER - used on production for sending emails to new registrations
+  #and used for reset password
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :tls => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "gmail.com",
+    :authentication => :login,
+    :user_name => "originalstormviper@gmail.com",
+    :password => ENV[:GOOGLE_PASS]
+   }
 end

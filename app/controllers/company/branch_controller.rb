@@ -8,6 +8,9 @@ class Company::BranchController < ApplicationController
     redirect_to root_path
   end
 
+  check_company_access(Company.find_by_id(@branch.parent.id))
+  return if !@branch.parent.id
+
   @company = @branch.parent
   end
 
