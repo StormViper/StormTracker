@@ -8,18 +8,18 @@
     </div>
 <% @user_expense.each do |e| %>
     <div id="expense">
-      <div id="exp-id"><%= e.id %></div>
-      <div id="exp-name"><%= e.name %></div>
-      <div id="exp-desc"><%= e.description %></div>
+      <div id="exp-id"><%= link_to e.id, root_path %></div>
+      <div id="exp-name"><%= link_to e.name, root_path %></div>
+      <div id="exp-desc"><%= link_to e.description, root_path %></div>
       <div id="exp-status">
         <% if e.status == "Confirmed" %>
-          status: <i style="color:yellow;"><%= "#{e.status}" %></i>
+          status: <i id="exp-confirmed"><%= link_to "#{e.status}", root_path %></i>
         <% elsif e.status == "Refused" %>
-          Status: <i style="color:red;"><%= "#{e.status}" %></i>
+          Status: <i id="exp-refused"><%= link_to "#{e.status}", root_path %></i>
         <% elsif e.status == "Reimbursed" || e.status == "Personal" %>
-          Status: <i style="color:green;"><%= "#{e.status}" %></i>
+          Status: <i id="exp-reimbursed-personal"><%= link_to "#{e.status}", root_path %></i>
         <% else %>
-          Status: <i style="color:blue;"><%= "#{e.status}" %></i>
+          Status: <i id="exp-other"><%= link_to "#{e.status}", root_path %></i>
         <% end %>
       </div>
 <% end %>
