@@ -2,8 +2,9 @@
   height: auto;
 }
 
-#expense-header, #expense{
+#expense-header, #expense, #expense a{
   text-align: center;
+  text-decoration: none !important;
 }
 
 #exp-id-header{
@@ -45,10 +46,29 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#exp-id a, #exp-desc a, #exp-name a{
+  color: white;
+}
+
+#exp-confirmed a {
+  color: yellow !important;
+}
+#exp-refused a{
+  color: red !important;
+}
+
+#exp-reimbursed-personal a{
+  color: green !important;
+}
+
+#exp-other a {
+  color: blue;
+}
+
 #exp-id{
   text-shadow: 2px 2px grey;
   font-weight: bolder;
-  color: white;
+  color: white !important;
   font-size: 1.5em;
   width: 20%;
   display: inline-block;
@@ -77,7 +97,6 @@
 }
 
 #exp-desc:hover,#exp-id:hover,#exp-name:hover,#exp-status:hover {
-  background-color: #b3b3b3;
   -webkit-box-shadow: 1px 0px 30px 0px rgba(17, 223, 255, 0.75);
   -moz-box-shadow:    1px 0px 30px 0px rgba(17, 223, 255, 0.75);
   box-shadow:         1px 0px 30px 0px rgba(17, 223, 255, 0.75);

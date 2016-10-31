@@ -21,4 +21,5 @@ class Branch < ActiveRecord::Base
 
   	return comp.owner
   end
+
 end

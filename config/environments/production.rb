@@ -80,6 +80,7 @@ Rails.application.configure do
 
   #Setup SMTP for MAILER - used on production for sending emails to new registrations
   #and used for reset password
+  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     :tls => true,
@@ -88,6 +89,6 @@ Rails.application.configure do
     :domain => "gmail.com",
     :authentication => :login,
     :user_name => "originalstormviper@gmail.com",
-    :password => ENV[:GOOGLE_PASS]
+    :password => ENV["GOOGLE_PASS"]
    }
 end
