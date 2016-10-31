@@ -1,6 +1,10 @@
 class Company::DashboardController < ApplicationController
   before_filter :authenticate_company, :authenticate_user!
   def index
+    check_company_access(Company.find_by_id(params[:Company]))
+    return if !params[:Company]
+
+
     if params[:Company]
       @company = Company.where("id LIKE ?", params[:Company]).first
       @total = @company.total
@@ -16,12 +20,20 @@ class Company::DashboardController < ApplicationController
   end
 
   def user
+    check_company_access(Company.find_by_id(params[:company_id]))
+    return if !params[:company_id]
+
+
     @company = Company.where("id LIKE ?", params[:company_id]).first
     redirect_to root_path if @company.user == nil
     @company_users = @company.user if @company.user.count > 0
   end
 
   def add_user_to_company
+    check_company_access(Company.find_by_id(params[:company]))
+    return if !params[:company]
+
+
     @user, @company = User.find_by_id(params[:user].id), params[:company]
     return if !@user
   if @company.users >= @company.user_limit

@@ -12,9 +12,11 @@ class Member::DashboardController < ApplicationController
   end
 
   def upgrade
+    check_access
   end
 
   def get_user
+    check_access
   if user_signed_in?
     render json: {user: current_user}
   else
