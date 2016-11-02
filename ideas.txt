@@ -1,0 +1,3 @@
+terms&conditions:
+  payments will be taken on the first day of each month.
+  If we do not receive any payments after a month, the account will be locked.

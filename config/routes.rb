@@ -58,6 +58,7 @@ Rails.application.routes.draw do
 
   scope module: 'public' do
     root 'dashboard#welcome'
+    get '/signup', to: 'registration#signup'
   end
 
   scope module: 'admin' do
@@ -93,5 +94,8 @@ Rails.application.routes.draw do
 
     get '/mycompany/branch', to: 'branch#index'
     post '/mycompany/expense/new', to: 'branch#new_expense'
+
+    get '/company/new', to: 'company#new'
+    post '/company/create', to: 'company#create'
   end
 end

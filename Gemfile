@@ -9,7 +9,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'fog', '~> 1.38'
 gem 'browser', '~> 2.0', '>= 2.0.3'
-gem 'activemerchant' #https://github.com/activemerchant/active_merchant
+gem 'stripe'
 gem 'url_safe_base64' #http://www.rubydoc.info/gems/url_safe_base64/0.2.2
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

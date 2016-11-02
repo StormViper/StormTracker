@@ -5,7 +5,7 @@ class Company < ActiveRecord::Base
   has_many :company_expense
   has_many :expense, through: :company_expense
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }

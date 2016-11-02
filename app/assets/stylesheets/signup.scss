@@ -1,0 +1,22 @@
+h1.registration-select-header {
+  font-size: 2.5em;
+  font-family: 'Baloo Paaji', cursive;
+  color: white;
+  text-align: center;
+}
+
+div.personal {
+  display: inline-block;
+}
+
+div.business {
+  display: inline-block;
+  margin-left: 60px;
+}
+
+#personal-button a, #business-button a{
+  color: black;
+  text-decoration: none;
+  font-size: 2em;
+  font-weight: bold;
+}

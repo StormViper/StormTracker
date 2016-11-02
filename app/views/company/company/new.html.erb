@@ -1,0 +1,31 @@
+<div id="user-form" align="center">
+<h2 id="user-header">Sign up</h2>
+<ul>
+<% @comp.errors.full_messages.each do |e| %>
+  <li><%= e %></li>
+<% end %>
+</ul>
+
+<%= form_for(@comp, as: @comp, url: company_create_path(@comp)) do |f| %>
+
+<div class="user-confirm">
+  <%= f.label "Company name", id: "user-label" %><br />
+  <%= f.text_field :name, autocomplete: "off", id: "user-textbox" %>
+</div>
+
+<div class="user-confirm">
+  <%= f.label "Email address", id: "user-label" %><br />
+  <%= f.text_field :email, autocomplete: "off", id: "user-textbox" %>
+</div>
+
+<div class="user-confirm">
+  <%= f.label "How many users do you have?", id: "user-label" %><br />
+  <%= f.text_field :user_limit, autocomplete: "off", id: "user-textbox" %>
+</div>
+
+  <div class="user-confirm">
+    <%= f.submit "Sign up", id:"signup-user" %>
+  </div>
+<% end %>
+
+</div>
